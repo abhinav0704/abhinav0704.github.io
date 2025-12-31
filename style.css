@@ -1,0 +1,492 @@
+/* ----------------- RESET ----------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ----------------- HERO ----------------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("/the_netflix_login_background__canada__2024___by_logofeveryt_dh0w8qv-fullview.jpg"); /* change to your image */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 0, rgba(0,0,0,0.6), transparent 55%),
+    radial-gradient(circle at 85% 0, rgba(0,0,0,0.7), transparent 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0.2) 0, rgba(0,0,0,0.9) 70%);
+}
+
+/* ----------------- NAVBAR ----------------- */
+.nav {
+  position: relative;
+  z-index: 2;
+  padding: 18px 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CSS-only Netflix-style N logo */
+.nf-logo {
+  position: relative;
+  height: 32px;
+  width: 18px;
+  border-left: 18px solid #e50914;
+  border-right: 18px solid #e50914;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.nf-logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 18px;
+  height: 100%;
+  background: #e50914;
+  transform: translateX(-50%) skewX(-18deg);
+}
+.nf-logo::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: -20%;
+  width: 140%;
+  height: 12px;
+  background: rgba(0,0,0,0.65);
+  filter: blur(6px);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+/* Netflix-style wordmark */
+.logo-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 2.4rem;          /* big and bold */
+  letter-spacing: 0.18em;     /* wide spacing like logo */
+  color: #e50914;             /* Netflix red */
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* keep it vertically centered inside nav */
+.nav {
+  position: relative;
+  z-index: 2;
+  padding: 16px 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: 1px solid #5e5e5e;
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.lang-btn:hover {
+  background: rgba(0,0,0,0.8);
+  border-color: #ffffff;
+  transform: scale(1.02);
+}
+.lang-icon {
+  font-size: 0.9rem;
+}
+.lang-arrow {
+  font-size: 0.7rem;
+}
+
+/* ----------------- BUTTONS ----------------- */
+.btn {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background: #f40612;
+  transform: scale(1.03);
+}
+.btn-signin {
+  padding: 6px 16px;
+}
+
+/* ----------------- HERO CONTENT ----------------- */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 140px 4vw 180px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.8rem, 4.8vw + 1rem, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  margin-bottom: 18px;
+}
+
+.hero-content h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 26px;
+}
+
+.hero-content p {
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+
+/* ----------------- EMAIL FORM ----------------- */
+.email-form {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.email-form input {
+  width: min(100%, 680px);
+  padding: 18px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #5e5e5e;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+}
+.email-form input::placeholder {
+  color: #b3b3b3;
+}
+.btn-get-started {
+  width: min(100%, 260px);
+  padding: 14px 0;
+  font-size: 1.1rem;
+  border-radius: 4px;
+}
+
+/* ----------------- TRENDING NOW ----------------- */
+.trending {
+  padding: 40px 4vw 30px;
+  background: #000;
+}
+.trending h2 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+
+/* row with side grey bars */
+.cards-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.cards-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* grey side bars */
+.edge-bar {
+  flex: 0 0 40px;
+  height: 260px;
+  background: #222;
+  border-radius: 6px;
+}
+
+/* each card */
+.card {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+/* posters from your system */
+.poster {
+  width: 220px;
+  height: 320px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+/* big outlined number at bottom-left */
+.rank {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 7rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 4px #fff;
+  text-stroke: 4px #fff;
+  line-height: 0.9;
+}
+
+/* hover border around card */
+.card:hover .poster {
+  box-shadow: 0 0 0 2px #fff;
+}
+
+/* ----------------- MORE REASONS ----------------- */
+.reasons {
+  padding: 40px 4vw 60px;
+  background: #000;
+}
+.reasons h2 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+.reason-card {
+  position: relative;
+  background: radial-gradient(circle at top left, #3b3b98, #000428 60%);
+  border-radius: 18px;
+  padding: 22px 20px 80px;
+  min-height: 260px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.reason-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.8);
+}
+.reason-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+.reason-card p {
+  font-size: 0.98rem;
+  color: #e5e5e5;
+}
+
+/* ----------------- FAQ ----------------- */
+.faq {
+  padding: 50px 8vw;
+  border-top: 8px solid #222;
+  border-bottom: 8px solid #222;
+  background: #000;
+}
+.faq h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+.faq-item {
+  background: #303030;
+  color: #fff;
+  padding: 22px 26px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.2s ease;
+}
+.faq-item:hover {
+  background: #454545;
+}
+.plus {
+  font-size: 2rem;
+}
+.faq-bottom-text {
+  margin: 28px 0 10px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* ----------------- FOOTER ----------------- */
+.footer {
+  padding: 30px 8vw 50px;
+  background: #000;
+  color: #b3b3b3;
+}
+.footer-top {
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+.footer-top a {
+  color: #b3b3b3;
+}
+.footer-links.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  gap: 18px 40px;
+  margin-bottom: 24px;
+}
+.footer-columns a {
+  display: block;
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+.footer-columns a:hover {
+  color: #ffffff;
+}
+.footer-lang-btn {
+  margin-bottom: 20px;
+}
+.country {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+.recaptcha-text {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  max-width: 600px;
+}
+.recaptcha-text a {
+  color: #b3b3b3;
+  text-decoration: underline;
+}
+/* ---- NETFLIX WORDMARK LOGO ---- */
+.logo-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: 0.12em;
+  color: #e50914;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.logo-n {
+  font-size: 2.1rem;
+  margin-right: 0.15em;
+}
+
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 768px) {
+
+  .nav {
+    padding: 12px 12px;
+  }
+
+  .nf-logo {
+    height: 26px;
+    width: 14px;
+    border-left-width: 14px;
+    border-right-width: 14px;
+  }
+
+  .hero-content {
+    padding: 120px 6vw 120px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .email-form input,
+  .btn-get-started {
+    width: 100%;
+  }
+
+  .trending {
+    padding: 24px 10px 20px;
+  }
+
+  .cards-row {
+    gap: 20px;
+  }
+
+  .poster {
+    width: 180px;
+    height: 260px;
+  }
+
+  .rank {
+    font-size: 4.5rem;
+  }
+
+  .reasons {
+    padding: 24px 10px 30px;
+  }
+
+  .faq {
+    padding: 30px 10px;
+    border-width: 6px 0;
+  }
+
+  .faq h2 {
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+  }
+
+  .faq-item {
+    padding: 16px 14px;
+    font-size: 1rem;
+  }
+
+  .footer {
+    padding: 24px 10px 36px;
+  }
+
+  .footer-top,
+  .footer-columns a,
+  .country {
+    font-size: 0.8rem;
+  }
+
+  .footer-links.footer-columns {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: 8px;
+  }
+}
